@@ -1,10 +1,111 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
+<head>
+    <title>TheoTown JSON生成器</title>
     <meta charset="UTF-8">
-    <title>-</title>
-  </head>
-  <body>
-    <h1>test</h1>
-  </body>
+    <style>
+body{
+    background-color: rgba(30, 30, 30, 1);
+    color: rgba(235, 235, 235, 1);
+    font-family: monospace, Courier, sans-serif;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    color: skyblue;
+}
+button{
+    border: none;
+    padding: 2px 4px 2px 4px;
+    margin: 5px auto;
+    font-size: 15px;
+}
+form label{
+    width: 30%;
+}
+form select{
+    width: 30%;
+}
+form input{
+    width: 30%;
+}
+
+.webTitle{
+    background-color: rgba(74, 65, 200, 1);
+    color: white;
+    position: sticky;
+    top: 0;
+    margin: 0px;
+    padding: 3px 6px 0px 6px;
+    font-size: 26px;
+}
+.box{
+    width: 98%;
+    height: auto;
+    padding: 3px;
+    margin: 8px auto;
+    background-color: rgba(95, 95, 95, 0.4);
+}
+.boxTitle{
+    font-size: 27px;
+    margin: 3px 8px 3px 8px;
+}
+.boxText{
+    margin: 2px 2px 2px 8px;
+}
+.code{
+    background-color: rgba(135, 135, 135, 0.4);
+    font-family: Courier, monospace, sans-serif;
+    margin: auto 3px;
+}
+
+.author {
+    text-align: center;
+    margin: 2px auto;
+}
+    </style>
+</head>
+<body>
+    <h1 class="webTitle">TheoTown JSON生成器</h1>
+
+    <div class="box">
+        <div class="boxTitle">简单建筑</div>
+        <div class="boxText">可以生成一个简单建筑的JSON，包含建筑主体和夜间动画。</div>
+        <div class="boxText">支持的建筑类型：<text class="code">住宅(residential)</text><text class="code">商业(commercial)</text><text class="code">工业(industrial)</text><text class="code">装饰(decoration)</text></div>
+        <br>
+
+        <div class="box"><form>
+        <div class="boxText"><div style="font-size: 19px;">信息表单</div></div>
+            <label for="type">建筑类型：</label>
+            <select width="40%" name="type">
+                <option value="residential">住宅</option>
+                <option value="commercial">商业</option>
+                <option value="industrial">工业</option>
+                <option value="decoration">装饰</option>
+            </select><br>
+            <label for="buildingID">建筑ID：</label><input type="text" name="buildingID" placeholder="建筑ID" id="buildingIdInput"><br>
+            <label for="buildingSize">建筑大小：</label><input name="buildingSize" placeholder="建筑大小" type="number" style="width: 40px;" min="1" max="32" step="1"><br>
+            <br>
+            <div class="boxText"><button type="submit">提交</button></div>
+        </form></div>
+    </div>
+
+    <div class="box">
+        <div class="boxTitle">插件清单文件</div>
+        <div class="boxText">可以生成一个插件清单文件（plugin.manifest)。</div>
+    </div>
+
+    <div class="box">
+        <div class="boxTitle">结果</div>
+        <div class="boxText">在此复制JSON: </div>
+        <div class="box"><div id="output">-</div></div>
+    </div>
+
+    <script>
+const outputText = document.getElementById("output");
+    </script>
+
+    <div class="author">网页版：<a href="https://www.ttpsc.linkpc.net/json">https://www.ttpsc.linkpc.net/json</a><br>本页面由<a href="https://b23.tv/eWskduP">Sioneo</a>(Bilibili个人主页)/<a href="https://forum.theotown.com/memberlist.php?mode=viewprofile&u=227382">dnswodn</a>(论坛个人主页)制作</div>
+</body>
 </html>
